@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF com multiplos retornos</title>
+</head>
+    <script>
+        var nome = prompt('Digite o seu nome')
+        var nota = prompt('Digite a sua nota')
+        var res = nota
+        var tex = " = "
+        //aprovado com louvor >95
+        //aprovado >=60
+        //recuperação >=40 && <60
+        //Reprovado <40
+        if( nota >94){
+            document.write('Aprovado com louvor')
+        }
+       else if(nota >=60){
+            res = 'Aprovado'
+        }
+        else if(nota >=40 && nota <60){
+            res = 'Recuperação'
+        } else {
+            res = 'Reprovado'
+        }
+
+       alert(nome + tex + res)
+    </script>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF ANINHADO</title>
+    <script>
+        var nome = prompt('Digite o seu nome')
+        var nota = prompt('Digite a sua nota')
+        var res = nota
+        
+        //aprovado com louvor >95
+        //aprovado >=60
+        //recuperação >=40 && <60
+        //Reprovado <40
+
+        //IF Aninhado
+        if( nota >60){
+            if( nota >=95){
+            res = ' Você foi Aprovado com louvor'
+            }else{
+                res = ' Aprovado com nota normal'
+            }
+        }
+
+        
+        else if(nota >=40 && nota <60){
+            res = ' Você está de Recuperação'
+        } 
+        
+        //ElSE Aninhado
+        else {
+            if ( nota >= 20) {
+            res = ' Você foi Reprovado por nota baixa'
+        } else{
+            res = ' Você foi Reprovado com louvor'
+        }
+        }
+
+       alert(nome + res)
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
