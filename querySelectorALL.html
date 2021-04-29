@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .titulo{
+            color: #f00;
+            font-size: 20px;
+            text-decoration: underline;
+        }
+        div{
+            border: 1px solid #000;
+            padding: 10px;
+            display: inline-block;
+        }
+        a{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">QuerySelectorALL</h1>
+    <p>O QuerySelectorALL() é um método que retorna os elementos do documento que correspondem a uma classe do CSS ou uma TAG especifica</p>
+    <h2 class="titulo">Curso de Javascript</h2>
+    <p>www.youtube.com/cfbcursos</p>
+    <p class="titulo">cfbcursos.com.br</p>
+    <div>
+        <p>Este texto está dentro de uma div</p>
+        <p>Este também</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=W0nOyrETMOw" target="_blank">CANAL</a>
+    <a href="https://www.amazon.com.br/">SITE</a>
+    <hr>
+    <script>
+
+        var elementos = document.querySelectorAll("div > p")
+        for(i=0 ; i < elementos.length; i++){
+           document.write(elementos[i].innerHTML + "<br>")
+        }
+       
+        
+
+    </script>
+</body>
+</html>
