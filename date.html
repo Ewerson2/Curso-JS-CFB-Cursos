@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       
+       var dt = new Date()
+
+       var ndt = new Date()
+
+       ndt.setFullYear(dt.getFullYear()+2)
+
+       var diasem = dt.getDay()
+       var dia = dt.getDate()
+       var mes = dt.getMonth()
+       var ano = ndt.getFullYear()
+
+       var horas = dt.getHours()
+       var minutos = dt.getMinutes()
+       
+
+       
+       var meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+       var semanas = ["Domingo","Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"]
+
+       document.write(semanas[diasem] + " , " + dia + " de " + meses[mes] + " de " + ano + "<br>" + horas + ":" + minutos) 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
