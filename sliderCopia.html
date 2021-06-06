@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    
-body{
+        * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
     background-color: rgb(111, 112, 158);
-   
+    text-align: center;
 }
 
 #dvslider {
@@ -18,46 +22,18 @@ body{
     width: 1000px;
     height: 300px;
     border: 1px solid #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.btSlider{
-    background-color: rgba(0,0,0,0.4);
-    height: 30%;
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-    margin: 10px;
-    border: none;
-}
-#dvload{
-    width: 100%;
-    height: 8px;
-    margin-top: 25%;
-    border: 1px solid rgba(255,255,255,0.3);
-}
-#dvbarra{
-    width: 0%;
-    height: 100%;
-    background-color: #42c920;
-}
 
     </style>
 
 </head>
 <body>
-    <div id="dvslider">
-        <button class="btSlider" onclick="troca(-1)">&#60;</button>
-        <div id="dvload">
-            <div id="dvbarra">
+    <div id="dvslider"></div>
+    <br>
+    <button id="imgA">Anterior</button>
+    <button id="imgP">Proxima</button>
 
-            </div>
-        </div>
-        <button class="btSlider"onclick="troca(1)">&#62;</button>
-    </div>
-  
     <script>
         var imgs =[]
         var slider
@@ -65,9 +41,8 @@ body{
         var maxImg
         var tmp
         var tempoTroca
-        var vTempo
-        var vBarra
-        
+        var imgP
+        var imgA
         
         function preCarregamento(){
          var s = 1
@@ -87,37 +62,44 @@ body{
          imgAtual = 0
          maxImg = imgs.length-1
          slider = document.getElementById("dvslider")
-         vBarra = document.getElementById("dvbarra")
          carregarImg(imgAtual)
-         tempoTroca = 0
-         anima()
-        
+         tempoTroca = 7000
+         tmp = setInterval(troca, tempoTroca)
      }
  
-
+     imgP = document.getElementById("imgP").addEventListener("click", proxima);
+     imgA = document.getElementById("imgA").addEventListener("click", anterior);
  
-     function troca(dir){
-         tempoTroca = 0
-         imgAtual += dir
+ 
+ 
+     function troca(){
+         imgAtual ++
          if(imgAtual>maxImg){
              imgAtual = 0
-         } else if(imgAtual < 0){
-             imgAtual = maxImg
          }
          carregarImg(imgAtual)
      }
-
-     function anima(){
-        tempoTroca ++
-        if(tempoTroca >= 500){
-            tempoTroca = 0
-            troca(1)
-        } 
-        vTempo = tempoTroca/5
-        vBarra.style.width = vTempo + "%"
-        window.requestAnimationFrame(anima)
-
+ 
+     function proxima() {
+     if (imgAtual == 4) {
+         imgAtual = 0;
+         carregarImg(imgAtual);
+     } else {
+         imgAtual++;
+         carregarImg(imgAtual);
      }
+ 
+ }
+ 
+ function anterior() {
+     if (imgAtual == 0) {
+         imgAtual = 4;
+         carregarImg(imgAtual);
+     } else {
+         imgAtual--;
+         carregarImg(imgAtual);
+     }
+ }
  
      window.addEventListener("load", inicia)
      </script>
