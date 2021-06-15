@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        #dv1{
-            width: 100px;
-            height: 100px;
-            border: 1px solid #000;
-            background-color: #f00;
-            position: absolute;
-            left: 0px;
-            top: 0px;
-        }
-    </style>
-    <script>
-
-        var px = 0 //variavel iniciada para mover quadrado para esquerda ou direira 
+var px = 0 //variavel iniciada para mover quadrado para esquerda ou direira 
         var py = 0 //variavel iniciada para mover quadrado para cima ou para baixo 
 
         function move(){
@@ -45,12 +25,3 @@
         }
         
         document.addEventListener("keydown", move) // keydown intercepta o presionamento de uma tecla
-
-
-    </script>
-</head>
-<body>
-    <div id="dv1"></div>
-    
-</body>
-</html>
