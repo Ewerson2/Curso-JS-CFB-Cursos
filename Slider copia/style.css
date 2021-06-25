@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(111, 112, 158);
+    text-align: center;
+}
+
+#dvslider {
+    margin: auto;
+    margin-top: 5rem;
+    width: 1000px;
+    height: 300px;
+    border: 1px solid #000;
+}
+

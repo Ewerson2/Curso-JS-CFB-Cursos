@@ -1,65 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-    
-body{
-    background-color: rgb(111, 112, 158);
-   
-}
-
-#dvslider {
-    margin: auto;
-    margin-top: 5rem;
-    width: 1000px;
-    height: 300px;
-    border: 1px solid #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.btSlider{
-    background-color: rgba(0,0,0,0.4);
-    height: 30%;
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-    margin: 10px;
-    border: none;
-}
-#dvload{
-    width: 100%;
-    height: 8px;
-    margin-top: 25%;
-    border: 1px solid rgba(255,255,255,0.3);
-}
-#dvbarra{
-    width: 0%;
-    height: 100%;
-    background-color: #42c920;
-}
-
-    </style>
-
-</head>
-<body>
-    <div id="dvslider">
-        <button class="btSlider" onclick="troca(-1)">&#60;</button>
-        <div id="dvload">
-            <div id="dvbarra">
-
-            </div>
-        </div>
-        <button class="btSlider"onclick="troca(1)">&#62;</button>
-    </div>
-  
-    <script>
-        var imgs =[]
+var imgs =[]
         var slider
         var imgAtual
         var maxImg
@@ -120,6 +59,3 @@ body{
      }
  
      window.addEventListener("load", inicia)
-     </script>
-</body>
-</html>
