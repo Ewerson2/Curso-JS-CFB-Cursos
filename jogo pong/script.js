@@ -18,12 +18,12 @@ var posCpuX
 var posCpuY
 
 //Direção de acordo com a tecla
-var diry
+var dirJy
 
 //Posições iniciais
 var posJogIniY = 180
 var posCpuIniY = 180
-var posBolaInix = 475
+var posBolaIniX = 475
 var posBolaIniY = 240
 
 //tamanhos
@@ -51,3 +51,69 @@ var velJogador
 //controle
 var pontos = 0
 var tecla
+var jogo = false
+
+function controlaJog(){
+    if(jogo){
+        posJogadorY+=velJogador*dirJy
+        vjogador.style.top=posJogadorY+"px"
+    }
+}
+
+function teclaDw(){
+    tecla=event.keyCode
+    //cima
+    if(tecla==38){
+        dirJy=-1
+    }
+    //baixo
+    else if(tecla==40){
+        dirJy=1
+    }
+
+}
+function teclaUp(){
+    tecla=event.keyCode
+    //cima
+    if(tecla==38){
+        dirJy=0
+    }
+    //baixo
+    else if(tecla==40){
+        dirJy=0
+    }
+}
+
+function game(){
+    if(jogo){
+        controlaJog()
+    }
+    frames=requestAnimationFrame(game)
+}
+
+function iniciaJogo(){
+    if(!jogo){
+        cancelAnimationFrame(frames)
+        jogo=true
+        dirJy=0
+        posBolaX=posBolaIniX
+        posBolaY=posBolaIniY
+        posJogadorY=0
+        posCpuY=posCpuIniY
+        game()
+    }
+}
+function inicializar(){
+    velBola=velCpu=velJogador=8
+    vbtIniciar=document.getElementById("btIniciar")
+    vbtIniciar.addEventListener("click", iniciaJogo)
+    vjogador=document.getElementById("dvJogador")
+    vcpu=document.getElementById("dvCpu")
+    vbola=document.getElementById("dvBola")
+    vPaineltxtPontos=document.getElementById("txtPontos")
+    document.addEventListener("keydown", teclaDw)
+    document.addEventListener("keyup", teclaUp)
+}
+
+
+window.addEventListener("load", inicializar)
