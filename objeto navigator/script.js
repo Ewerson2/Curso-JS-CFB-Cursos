@@ -17,6 +17,7 @@ function verificar() {
     painel.innerHTML += "Engine: " + navigator.product + "<hr>"
     painel.innerHTML += "Agente: " + navigator.userAgent + "<hr>"
     
+    
 }
 
 
