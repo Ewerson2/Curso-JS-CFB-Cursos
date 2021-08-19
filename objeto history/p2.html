@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    var painel
+var btnB
+var btnF
+var btnG
+
+function hB(){
+    window.history.back()
+}
+
+function hF(){
+    window.history.forward()
+}
+
+function hG(){
+    window.history.go(-2)
+}
+
+function inicia(){
+    btnB = document.getElementById("btnBack")
+    btnF = document.getElementById("btnForward")
+    btnG = document.getElementById("btnBack2")
+
+    btnB.addEventListener("click", hB)
+    btnF.addEventListener("click", hF)
+    btnG.addEventListener("click", hG)
+    painel = document.getElementById("info")
+    painel.innerHTML =history.length
+
+}
+
+window.addEventListener("load", inicia)
+</script>
+<body>
+    <h1>Pagina 2</h1>
+    <p id="info"></p>
+
+    <a href="index.html">home</a>
+    <a href="p1.html">pagina 1</a>
+    <a href="p2.html">pagina 2</a><hr>
+    <button id="btnBack">Voltar</button>
+    <button id="btnForward">Avançar</button>
+    <button id="btnBack2">Voltar 2</button>
+    <script src="script.js"></script>
+</body>
+</html>
