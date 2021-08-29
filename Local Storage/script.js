@@ -1,7 +1,15 @@
 var vcorf, vcort, vnome
 
-if (typeof (Storage) != "undefined") {
 
+if (localStorage.nome) {
+
+     vcorf = localStorage.corf
+     vcort = localStorage.cort
+     vnome = localStorage.nome
+
+     defineCor(1,vcorf)
+     defineCor(0,vcort)
+     document.getElementById("painel").innerHTML = "Bem vindo " +vnome + "<hr>"
     //localStorage.setItem("canal", "CFBCursos") 
     //localStorage.removeItem("canal")
 
@@ -34,10 +42,17 @@ function defineCor(op, cor) {
 }
 
 function gravar() {
+    var form = document.getElementById("fconf")
     vNome = document.getElementById("fnome").value
     localStorage.corf = vcorf
     localStorage.cort = vcort
     localStorage.nome = vNome
+    form.style.display = "none"
 
+}
+
+function mostraConf(){
+    var form = document.getElementById("fconf")
+    form.style.display="block"
 }
 
