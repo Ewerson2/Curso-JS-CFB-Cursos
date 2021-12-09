@@ -7,7 +7,7 @@ document.getElementById("btnDestaque").addEventListener("click",function(){
     }
     var at=document.createAttribute("style")
     at.value="color:#f00;"
-    p[num].setAttributeNode(at)
+    p[num-1].setAttributeNode(at)
     })
    
 }
