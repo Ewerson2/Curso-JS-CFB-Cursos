@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    padding: 0px;
+}
+
+.carro {
+    width: 250px;
+    margin-bottom: 50px;
+}
+
+.menu_item {
+    height: 100%;
+    cursor: pointer;
+}
+
+#menu {
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 500px;
+    height: 100px;
+    background-color: #fff;
+}
+html {
+    scroll-behavior: smooth;
+}
+    </style>
+
+</head>
+<body>
+    <div id="menu">
+        <button onclick="rolar()">Rolar</button>
+        <img id="btnc1" data-nome="c1" src="c1.png" alt="" class="menu_item">
+        <img id="btnc2" data-nome="c2" src="c2.png" alt="" class="menu_item">
+        <img id="btnc3" data-nome="c3" src="c3.png" alt="" class="menu_item">
+        <img id="btnc4" data-nome="c4" src="c4.png" alt="" class="menu_item">
+    </div>
+    <img id="c1" src="c1.png" alt="" class="carro">
+    <img id="c2" src="c2.png" alt="" class="carro">
+    <img id="c3" src="c3.png" alt="" class="carro">
+    <img id="c4" src="c4.png" alt="" class="carro">
+    <script src="script.js"></script>
+</body>
+</html>
